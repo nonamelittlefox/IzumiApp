@@ -6,7 +6,7 @@ import CustomInput from '../CustomInput';
 
 const Message = ({ data }) => {
   return (
-    <View style={styleMessage.conatiner}>
+    <View style={styleMessage.container}>
       <Text style={styleMessage.date}>{ data.date }</Text>
       <View style={styleMessage.message}>
         <Text>{ data.message }</Text>
@@ -16,7 +16,7 @@ const Message = ({ data }) => {
 }
 
 const styleMessage = StyleSheet.create({
-  conatiner: {
+  container: {
     marginBottom: 15,
   },
   date: {
@@ -113,8 +113,11 @@ const Note = () => {
       <View style={styles.wrapper}>
         <View style={styles.header}>
           <View style={styles.headerIcon}>
-            <Icon style={styles.iconBack} name="angle-double-left" size={20} color="#1534A1" />
+            <Icon style={styles.iconBack} name="angle-double-left" size={30} color="#1534A1" />
           </View>
+        </View>
+
+        <View style={styles.header}>
           <View style={styles.headerText}>
             <Text style={styles.titleScreen}>お知らせ</Text>
           </View>
@@ -203,8 +206,9 @@ const styles = StyleSheet.create({
   },
   headerIcon: {
     flex: 3,
-    justifyContent: 'center',
-    alignItems: 'center'
+    margin: 15,
+    justifyContent: 'left',
+    alignItems: 'left'
   },
   iconBack: {
     fontWeight: 'bold',
