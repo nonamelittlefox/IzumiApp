@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Text, StyleSheet, Pressable, ScrollView, KeyboardAvoidingView, TouchableOpacity, Platform } from 'react-native';
 import React, { useState, useRef } from 'react';
 import Navbar from '../Navbar';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -44,15 +44,28 @@ const Notification = ({ data, index }) => {
     backgroundColor: '#F1F5FA'
   }
 
+  const [showDetail, setShowDetail] = useState(false);
+  const onPress = () => setShowDetail(!showDetail);
+
   return (
-    <View style={[styleNotification.container, index % 2 !== 0 ? bgWhite : bgBlue]}>
-      <View style={styleNotification.notification}>
-        <Text>{ data.message }</Text>
+    <TouchableOpacity onPress={onPress}>
+      <View style={[styleNotification.container, index % 2 !== 0 ? bgWhite : bgBlue]}>
+          <View>
+            <Text>{ data.message }</Text>
+          </View>
+
+        <View style={styleNotification.date}>
+          <Text>{ data.date }</Text>
+        </View>
       </View>
-      <View style={styleNotification.date}>
-        <Text>{ data.date }</Text>
-      </View>
-    </View>
+
+      <View style={styleNotification.detailContainer}>
+          {
+            showDetail &&
+            <Text style={[styleNotification.detailFrame]}>{ data.message }</Text>
+          }
+        </View>
+    </TouchableOpacity>
   )
 }
 
@@ -60,15 +73,23 @@ const styleNotification = StyleSheet.create({
   container: {
     padding: 15
   },
-  notification: {
-    marginBottom: 10,
-  },
   date: {
     flex: 1,
     color: '#000',
     opacity: 0.5,
     fontSize: 11,
     alignSelf: 'flex-end'
+  },
+  detailContainer: {
+    alignItems: "center",
+    padding: 10
+  },
+  detailFrame: {
+    borderWidth: 1,
+    borderColor: "#000000",
+    padding: 10,
+    width: 362,
+    height: 400,
   }
 })
 
@@ -115,9 +136,7 @@ const Note = () => {
           <View style={styles.headerIcon}>
             <Icon style={styles.iconBack} name="angle-double-left" size={30} color="#1534A1" />
           </View>
-        </View>
 
-        <View style={styles.header}>
           <View style={styles.headerText}>
             <Text style={styles.titleScreen}>お知らせ</Text>
           </View>
@@ -198,26 +217,23 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
   },
-
   header: {
     height: 39,
     flexDirection: 'row',
     lineHeight: 39,
   },
   headerIcon: {
-    flex: 3,
-    margin: 15,
-    justifyContent: 'left',
-    alignItems: 'left'
+    flex: 1,
+    marginLeft: 15,
   },
   iconBack: {
     fontWeight: 'bold',
     lineHeight: 39,
   },
   headerText: {
-    flex: 3,
-    justifyContent: 'center',
-    alignItems: 'center'
+    flex: 5,
+    alignItems: 'center',
+    paddingRight: 65,
   },
   titleScreen: {
     fontSize: 20,

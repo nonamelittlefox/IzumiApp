@@ -12,7 +12,7 @@ const Home = ({ navigation }) => {
       <View style={styleHome.zoneView}>
         <View style={styleHome.zoneUser}>
           <Text style={styleHome.displayUsername}>山田太郎</Text>
-          <Text style={styleHome.displayUserInfo}>東京team / ドライバー </Text>
+          <Text style={styleHome.displayUserInfo}>東京Team / ドライバー </Text>
         </View>
       </View>
 
