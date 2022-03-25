@@ -5,6 +5,7 @@ export const StackName = {
   ChangePasswordScreen: 'ChangePasswordScreen',
   MessageConfirmPasswordScreen: 'MessageConfirmPasswordScreen',
   ForgotPasswordScreen: 'ForgotPasswordScreen',
+  NotifyResetPasswordScreen: 'NotifyResetPasswordScreen',
   Dashboard: 'Dashboard' 
 }
 
@@ -32,6 +33,10 @@ export const Options = {
   ForgotPasswordScreen: {
     headerShown: false,
     title: 'Forgot Password Screen',
+  },
+  NotifyResetPasswordScreen: {
+    headerShown: false,
+    title: 'Notify Reset Password Screen',
   },
   Dashboard: {
     headerShown: false,

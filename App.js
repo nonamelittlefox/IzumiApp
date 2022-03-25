@@ -12,6 +12,7 @@ import MessageSignUpScreen from './src/screens/MessageSignUpScreen';
 import ChangePasswordScreen from './src/screens/ChangePasswordScreen';
 import MessageConfirmPasswordScreen from './src/screens/MessageConfirmPasswordScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import NotifyResetPasswordScreen from './src/screens/NotifyResetPasswordScreen';
 import Dashboard from './src/screens/Dashboard';
 
 import {
@@ -58,6 +59,12 @@ function MyStack() {
         options={Options['ForgotPasswordScreen']} 
         name={StackName['ForgotPasswordScreen']} 
         component={ForgotPasswordScreen} 
+      />
+
+      <Stack.Screen 
+        options={Options['NotifyResetPasswordScreen']}
+        name={StackName['NotifyResetPasswordScreen']}
+        component={NotifyResetPasswordScreen}
       />
 
       <Stack.Screen 
