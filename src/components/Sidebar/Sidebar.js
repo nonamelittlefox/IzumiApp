@@ -15,6 +15,9 @@ import PayCheck from '../PayCheck';
 import Maintenance from '../Maintenance';
 import PL from '../PL';
 import Transport from '../Transport';
+import Workshift from '../Workshift';
+import Payslip from '../Payslip';
+import Cloud from '../Cloud';
 import Setting from '../Setting';
 
 
@@ -88,7 +91,10 @@ const Sidebar = () => {
       <Drawer.Screen name="Maintenance" component={Maintenance} options={{ drawerLabel: '整備', drawerItemStyle: styleWhite }} />
       <Drawer.Screen name="PL" component={PL} options={{ drawerLabel: 'P/L', drawerItemStyle: styleBlackSqueeze }} />
       <Drawer.Screen name="Transport" component={Transport} options={{ drawerLabel: '車両', drawerItemStyle: styleWhite }} />
-      <Drawer.Screen name="Setting" component={Setting} options={{ drawerLabel: '設定', drawerItemStyle: styleBlackSqueeze }} />
+      <Drawer.Screen name="Workshift" component={Workshift} options={{ drawerLabel: 'Workshift', drawerItemStyle: styleBlackSqueeze }} />
+      <Drawer.Screen name="Payslip" component={Payslip} options={{ drawerLabel: 'Payslip', drawerItemStyle: styleWhite }} />
+      <Drawer.Screen name="Cloud" component={Cloud} options={{ drawerLabel: 'Cloud', drawerItemStyle: styleBlackSqueeze }} />
+      <Drawer.Screen name="Setting" component={Setting} options={{ drawerLabel: '設定', drawerItemStyle: styleWhite }} />
     </Drawer.Navigator>
   )
 }
