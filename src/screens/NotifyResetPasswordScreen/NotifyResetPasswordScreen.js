@@ -1,5 +1,5 @@
 import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Button } from 'react-native';
-import CatButton from '../../components/CatButton';
+import PasswordResetNotifyButton from '../../components/PasswordResetNotifyButton';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import React, { useState } from 'react';
 
@@ -28,7 +28,7 @@ const NotifyResetPasswordScreen = ({ navigation }) => {
         </View>
 
         <View style={styles.footer}>
-          <CatButton text='ログイン画面に戻る' onPress={returnToLoginScreen} />
+          <PasswordResetNotifyButton text='ログイン画面に戻る' onPress={returnToLoginScreen} />
         </View>
       </View>
     </TouchableWithoutFeedback>

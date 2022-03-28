@@ -1,7 +1,7 @@
 import { Text, StyleSheet, Pressable } from 'react-native';
 import React from 'react'
 
-const CatButton = ({ onPress, text = "Button", type = "default", bgColor, textColor, style }) => {
+const PasswordResetNotifyButton = ({ onPress, text = "Button", type = "default", bgColor, textColor, style }) => {
     return (
         <Pressable 
             onPress={onPress} 
@@ -33,12 +33,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 5,
 
-        borderTopWidth: 1,
-        borderTopColor: '#E6E6E6',
+        borderWidth: 1,
+        borderColor: '#E6E6E6',
 
-        borderRightWidth: 1,
-        borderRightColor: '#E6E6E6',
-    
         shadowColor: '#171717',
         shadowOffset: {
             width: -2, 
@@ -46,10 +43,12 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.2,
         shadowRadius: 3,
+
+        elevation: 6,
     },
     text: {
         color: '#1534A1',
-        fontWeight: 'bolder',
+        fontWeight: 'bold',
         fontSize: 20,
     },
     btn_default: {
@@ -87,4 +86,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default CatButton;
+export default PasswordResetNotifyButton;

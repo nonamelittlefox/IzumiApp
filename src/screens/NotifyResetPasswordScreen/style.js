@@ -24,7 +24,7 @@ export const stylesCSS = {
   description: {
     fontSize: 18,
     color: '#1534A1',
-    fontWeight: 'bolder',
+    fontWeight: 'bold',
   },
 
   footer: {
