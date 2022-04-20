@@ -14,6 +14,7 @@ export const stylesCSS = {
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   textLogo: {
     fontSize: 64,
     fontWeight: 'bold',
@@ -24,71 +25,65 @@ export const stylesCSS = {
   zoneInput: {
     flex: 1,
     justifyContent: 'center',
+    marginBottom: 100,
   },
+
   inputUserId: {
-    height: 41,
+    height: 60,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 20,
     marginBottom: 30,
   },
+
   iconUser: {
-    height: 41,
+    height: 60,
     paddingHorizontal: 10,
     backgroundColor: '#FFF',
-
-    borderTopColor: '#e8e8e8',
-    borderLeftColor: '#e8e8e8',
-    borderBottomColor: '#e8e8e8',
+    borderColor: 'transparent',
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderLeftWidth: 1,
   },
+
   inputPassword: {
-    height: 41,
+    height: 60,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 40,
     marginBottom: 30
   },
+
   iconKey: {
-    lineHeight: 41,
+    lineHeight: 60,
     paddingHorizontal: 10,
     backgroundColor: '#FFF',
-
-    borderTopColor: '#e8e8e8',
-    borderLeftColor: '#e8e8e8',
-    borderBottomColor: '#e8e8e8',
+    borderColor: 'transparent',
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderLeftWidth: 1,
   },
+
   iconEye: {
-    lineHeight: 41,
+    lineHeight: 60,
     paddingHorizontal: 10,
     backgroundColor: '#FFF',
-
-    borderTopColor: '#e8e8e8',
-    borderRightColor: '#e8e8e8',
-    borderBottomColor: '#e8e8e8',
+    borderColor: 'transparent',
     borderTopRightRadius: 5,
     borderBottomRightRadius: 5,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderRightWidth: 1,
   },
 
   zoneHelper: {
     flex: 1,
     justifyContent: 'flex-end',
     marginBottom: 20
-  }
+  },
+
+  baseInput: {
+    backgroundColor: 'white',
+    width: '100%',
+    height: 60,
+  },
 };
 
 export const borderUserId = {

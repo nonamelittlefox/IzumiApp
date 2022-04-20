@@ -1,6 +1,8 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
+import Toast, { BaseToast } from 'react-native-toast-message';
+import { StyleSheet } from 'react-native';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -21,6 +23,54 @@ import {
 } from './src/const/Stack';
 
 const Stack = createStackNavigator();
+
+const toastConfig = {
+
+  success: (props) => (
+    <BaseToast
+      {...props}
+      style={styles.successToast}
+      text1Style={{
+        color: '#444444',
+        fontWeight: 'bold',
+        fontSize: 18
+      }}
+      text2Style={{
+        fontSize: 14
+      }}
+    />
+  ),
+
+  warning: (props) => (
+    <BaseToast
+      {...props}
+      style={styles.warningToast}
+      text1Style={{
+        color: '#444444',
+        fontWeight: 'bold',
+        fontSize: 18
+      }}
+      text2Style={{
+        fontSize: 14
+      }}
+    />
+  ),
+
+  error: (props) => (
+    <BaseToast
+      {...props}
+      style={styles.errorToast}
+      text1Style={{
+        color: '#444444',
+        fontWeight: 'bold',
+        fontSize: 18
+      }}
+      text2Style={{
+        fontSize: 14
+      }}
+    />
+  ),
+};
 
 function MyStack() {
   return (
@@ -76,12 +126,66 @@ function MyStack() {
   );
 }
 
+const styles = StyleSheet.create({
+  warningToast: {
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.00,
+    elevation: 24,
+    borderLeftColor: '#FCD900',
+    borderLeftWidth: 8,
+    borderRadius: 5,
+    width: '90%',
+    height: 80,
+    backgroundColor: '#FFFFFF',
+  },
+
+  successToast: {
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.00,
+    elevation: 24,
+    borderLeftColor: '#81B214',
+    borderLeftWidth: 8,
+    borderRadius: 5,
+    width: '90%',
+    height: 80,
+    backgroundColor: '#FFFFFF',
+  },
+
+  errorToast: {
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.00,
+    elevation: 24,
+    borderLeftColor: '#BE0000',
+    borderLeftWidth: 8,
+    borderRadius: 5,
+    width: '90%',
+    height: 80,
+    backgroundColor: '#FFFFFF',
+  }
+});
+
 export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
         <StatusBar style="auto" />
         <MyStack />
+        <Toast config={toastConfig} />
       </NavigationContainer>
     </SafeAreaProvider>
   );
